@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title data-i18n="meta.title">행복해지구나 생태환경 캠프 안내</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- 상단 고정 헤더 -->
+  <header id="main-header">
+    <div class="header-left">
+      <span class="school-badge" data-i18n="common.schoolName">금산초등학교</span>
+      <h1><i class="fa-solid fa-leaf"></i> EcoCamp</h1>
+    </div>
+    
+    <!-- 다국어 선택 드롭다운 -->
+    <div class="lang-selector-container" id="lang-selector">
+      <button class="lang-select-btn" id="lang-btn">
+        <span class="flag-icon" id="current-flag">🇰🇷</span> 
+        <span id="current-lang-name">KO</span>
+      </button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" data-lang="ko">
+          <span class="flag-icon">🇰🇷</span> 한국어
+        </button>
+        <button class="lang-option" data-lang="en">
+          <span class="flag-icon">🇺🇸</span> English
+        </button>
+        <button class="lang-option" data-lang="zh">
+          <span class="flag-icon">🇨🇳</span> 中文
+        </button>
+        <button class="lang-option" data-lang="ja">
+          <span class="flag-icon">🇯🇵</span> 日本語
+        </button>
+        <button class="lang-option" data-lang="vi">
+          <span class="flag-icon">🇻🇳</span> Tiếng Việt
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 영웅 배너 (히어로 섹션) -->
+  <div class="hero">
+    <div class="hero-logo">🌍</div>
+    <h2 data-i18n="common.campTitle">행복해지구나 생태환경 캠프</h2>
+    <p data-i18n="common.subTitle">국립평창청소년수련원 생태환경교육</p>
+  </div>
+
+  <main>
+    <!-- 1. 캠프 개요 탭 (기본 활성화) -->
+    <section id="overview-section" class="tab-content active">
+      <div class="section-header">
+        <h3>
+          <i class="fa-solid fa-circle-info"></i>
+          <span data-i18n="overview.title">캠프 개요</span>
+        </h3>
+        <p data-i18n="overview.subtitle">초록빛 대자연 속에서 함께 배우고 성장해요!</p>
+      </div>
+
+      <div class="card">
+        <!-- 일시 -->
+        <div class="info-row">
+          <div class="info-icon"><i class="fa-regular fa-calendar-days"></i></div>
+          <div class="info-content">
+            <div class="info-label" data-i18n="overview.dateTitle">캠프 기간</div>
+            <div class="info-value" data-i18n="overview.dateVal">2026. 6. 24.(수) ~ 26.(금) [2박 3일]</div>
+          </div>
+        </div>
+
+        <!-- 장소 -->
+        <div class="info-row">
+          <div class="info-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+          <div class="info-content">
+            <div class="info-label" data-i18n="overview.placeTitle">장소</div>
+            <div class="info-value" data-i18n="overview.placeVal">국립평창청소년수련원</div>
+          </div>
+        </div>
+
+        <!-- 대상 -->
+        <div class="info-row">
+          <div class="info-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="info-content">
+            <div class="info-label" data-i18n="overview.targetTitle">참가 대상</div>
+            <div class="info-value" data-i18n="overview.targetVal">4, 5, 6학년 학생 30명</div>
+          </div>
+        </div>
+
+        <!-- 이동 수단 -->
+        <div class="info-row">
+          <div class="info-icon"><i class="fa-solid fa-bus"></i></div>
+          <div class="info-content">
+            <div class="info-label" data-i18n="overview.transportTitle">이동 방법</div>
+            <div class="info-value" data-i18n="overview.transportVal">전세버스 1대 탑승</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 일정표 탭 -->
+    <section id="schedule-section" class="tab-content">
+      <div class="section-header">
+        <h3>
+          <i class="fa-regular fa-clock"></i>
+          <span data-i18n="schedule.title">캠프 일정표</span>
+        </h3>
+        <p data-i18n="schedule.subtitle">2박 3일 동안 지구 지킴이가 되어 신나게 모험해 봐요!</p>
+      </div>
+
+      <!-- 일자별 탭 버튼 -->
+      <div class="tabs-container">
+        <button class="tab-btn active" data-tab="day1" data-i18n="schedule.day1">1일차 (6/24 수)</button>
+        <button class="tab-btn" data-tab="day2" data-i18n="schedule.day2">2일차 (6/25 목)</button>
+        <button class="tab-btn" data-tab="day3" data-i18n="schedule.day3">3일차 (6/26 금)</button>
+      </div>
+
+      <!-- 1일차 일정 패널 -->
+      <div class="timeline-panel active" id="day1-panel">
+        
+        <!-- 학교 출발 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-school"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">12:00 ~ 13:00</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t1200">학교 출발 및 이동</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t1200Desc">학교에서 설레는 마음으로 전세버스에 탑승해 평창으로 출발해요. (12:00 출발)</p>
+          </div>
+        </div>
+
+        <!-- 도착 및 오리엔테이션 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-door-open"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">14:00 ~ 15:00</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t1400">도착 및 오리엔테이션</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t1400Desc">수련원에 안전하게 도착하여 숙소를 배정받고 안전수칙과 일정을 확인해요.</p>
+          </div>
+        </div>
+
+        <!-- 출동! 숲 속 친구들 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-tree"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">15:00 ~ 17:00</span>
+            <div class="timeline-act-title">
+              <span data-i18n="schedule.activities.t1500_d1">출동! 숲 속 친구들</span>
+            </div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t1500_d1Desc">수련원의 아름다운 대자연을 걸으며 숲 속 생태계를 오감으로 체험하고 자연과 친해지는 시간이에요.</p>
+          </div>
+        </div>
+
+        <!-- 저녁식사 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-utensils"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">17:00 ~ 19:00</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t1700">휴식 및 즐거운 저녁식사</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t1700Desc">수련원의 맛있는 영양 식사를 하고 친구들과 방에서 편안하게 휴식을 취해요.</p>
+          </div>
+        </div>
+
+        <!-- 깃대종 지킴이 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-shield-cat"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">19:00 ~ 20:30</span>
+            <div class="timeline-act-title">
+              <span data-i18n="schedule.activities.t1900_d1">캐치! 체력핑! 출동! 깃대종 지킴이</span>
+              <span class="ping-badge">체력핑 🏃</span>
+            </div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t1900_d1Desc">지구를 보존하기 위한 역량 기르기 1단계! 강원 지역의 소중한 깃대종 동식물을 탐색하며 지구 환경을 생각해요.</p>
+          </div>
+        </div>
+
+        <!-- 취침 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-moon"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">20:30 ~ 22:00</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t2030">개인 정비 및 꿈나라로</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t2030Desc">깨끗하게 씻고 내일의 더 멋진 모험을 위해 일찍 잠자리에 들어요. (22:00 소등 및 취침)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2일차 일정 패널 -->
+      <div class="timeline-panel" id="day2-panel">
+        
+        <!-- 아침식사 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-sun"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">08:00 ~ 09:00</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t0800">기상 및 아침식사</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t0800Desc">상쾌하게 일어나 아침 이슬을 맞으며 든든하게 아침 밥을 먹어요.</p>
+          </div>
+        </div>
+
+        <!-- 인원 안내 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-clipboard-list"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">09:00 ~ 09:30</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t0900">인원 파악 및 활동 안내</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t0900Desc">친구들과 모두 모여 인원을 확인하고 오늘 펼쳐질 신나는 모험을 안내받아요.</p>
+          </div>
+        </div>
+
+        <!-- 지구 지킴이 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-earth-asia"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">09:30 ~ 12:00</span>
+            <div class="timeline-act-title">
+              <span data-i18n="schedule.activities.t0930_d2">캐치! 도전핑! 출동! 지구 지킴이</span>
+              <span class="ping-badge">도전핑 🎯</span>
+            </div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t0930_d2Desc">지구를 보존하기 위한 역량 기르기 2단계! 미션을 수행하며 우리가 환경을 지킬 수 있는 방법을 배워요.</p>
+          </div>
+        </div>
+
+        <!-- 점심식사 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-utensils"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">12:00 ~ 13:00</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t1200_d2">영양 만점 점심식사</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t1200_d2Desc">오전 활동으로 땀을 흘린 뒤 먹는 꿀맛 같은 점심시간!</p>
+          </div>
+        </div>
+
+        <!-- 협력핑 우정 다지기 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-people-group"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">13:00 ~ 15:00</span>
+            <div class="timeline-act-title">
+              <span data-i18n="schedule.activities.t1300_d2">캐치! 협력핑! 우정 다지기</span>
+              <span class="ping-badge">협력핑 🤝</span>
+            </div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t1300_d2Desc">지구를 보존하기 위한 역량 기르기 3단계! 친구들과 협동하며 다양한 생태 게임과 퍼즐을 해결해요.</p>
+          </div>
+        </div>
+
+        <!-- 산책 및 자유 시간 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-compass"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">15:00 ~ 17:00</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t1500_d2">수련원 산책 및 자유 시간</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t1500_d2Desc">수련원의 맑은 공기를 마시며 자유롭게 산책하고 친구들과 사진을 찍어요.</p>
+          </div>
+        </div>
+
+        <!-- 저녁식사 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-utensils"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">17:00 ~ 19:00</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t1700">휴식 및 즐거운 저녁식사</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t1700Desc">수련원의 맛있는 영양 식사를 하고 친구들과 방에서 편안하게 휴식을 취해요.</p>
+          </div>
+        </div>
+
+        <!-- 별자리 및 마음 나눔 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-star"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">19:00 ~ 20:30</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t1900_d2">밤하늘 별자리 관찰 및 소망 나눔</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t1900_d2Desc">평창의 아름다운 밤하늘 아래에서 별자리도 감상하고, 환경을 사랑하겠다는 소망을 친구들과 나누어 봐요.</p>
+          </div>
+        </div>
+
+        <!-- 취침 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-moon"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">20:30 ~ 22:00</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t2030">개인 정비 및 꿈나라로</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t2030Desc">깨끗하게 씻고 내일의 더 멋진 모험을 위해 일찍 잠자리에 들어요. (22:00 소등 및 취침)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3일차 일정 패널 -->
+      <div class="timeline-panel" id="day3-panel">
+        
+        <!-- 아침식사 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-sun"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">08:00 ~ 09:00</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t0800">기상 및 아침식사</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t0800Desc">상쾌하게 일어나 아침 이슬을 맞으며 든든하게 아침 밥을 먹어요.</p>
+          </div>
+        </div>
+
+        <!-- 환경 정리 및 짐정리 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-suitcase"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">09:30 ~ 12:00</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t0930_d3">환경 보호 실천 다짐 및 짐 정리</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t0930_d3Desc">일상생활 속에서 실천할 수 있는 나만의 에코 행동 요령을 정리하고, 가져온 물건을 가방에 꼼꼼히 챙겨요.</p>
+          </div>
+        </div>
+
+        <!-- 급식 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-utensils"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">11:40 ~ 12:30</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t1140">마지막 급식 맛보기</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t1140Desc">평창 수련원에서의 마지막 점심식사(11:40)를 맛있게 먹고 아쉬운 인사를 나눕니다.</p>
+          </div>
+        </div>
+
+        <!-- 출발 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-bus-simple"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">12:30 ~ 15:00</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t1230">수련원 출발</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t1230Desc">행복했던 기억을 가득 안고 정든 평창 수련원을 출발해 학교로 돌아갑니다.</p>
+          </div>
+        </div>
+
+        <!-- 도착 및 귀가 -->
+        <div class="timeline-item">
+          <div class="timeline-node"><i class="fa-solid fa-house-chimney-user"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-time">15:00 ~ 17:00</span>
+            <div class="timeline-act-title" data-i18n="schedule.activities.t1630">학교 도착 및 집으로</div>
+            <p class="timeline-desc" data-i18n="schedule.activities.t1630Desc">학교에 무사히 도착해 인원을 점검하고 통학버스를 타고 귀가합니다. (16:30 하교)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 준비물 체크리스트 탭 -->
+    <section id="checklist-section" class="tab-content">
+      <div class="section-header">
+        <h3>
+          <i class="fa-solid fa-list-check"></i>
+          <span data-i18n="checklist.title">준비물 체크리스트</span>
+        </h3>
+        <p data-i18n="checklist.subtitle">꼼꼼하게 가방을 싸서 즐거운 캠프를 준비해요!</p>
+      </div>
+
+      <div class="card">
+        <!-- 체크리스트 진행도 바 -->
+        <div class="checklist-progress-bar">
+          <div class="checklist-progress-fill" id="progress-bar"></div>
+        </div>
+        <div class="checklist-counter">
+          <span id="checked-count">0</span> / <span id="total-count">14</span> 
+          <span data-i18n="checklist.checkCount">개의 물건을 챙겼어요!</span>
+        </div>
+
+        <!-- 필수 준비물 그룹 -->
+        <div class="checklist-group">
+          <div class="checklist-group-title">
+            <span data-i18n="checklist.essentialTitle">🎒 필수 준비물 (모두 챙겨야 해요!)</span>
+          </div>
+          <div class="checklist-list">
+            
+            <label class="checklist-item">
+              <input type="checkbox" id="item-clothes" class="pack-checkbox">
+              <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+              <span class="checklist-text" data-i18n="checklist.itemClothes">편한 활동복(체육복)</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" id="item-shoes" class="pack-checkbox">
+              <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+              <span class="checklist-text" data-i18n="checklist.itemShoes">운동화 (많이 걸어요)</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" id="item-extraclothes" class="pack-checkbox">
+              <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+              <span class="checklist-text" data-i18n="checklist.itemExtraClothes">여벌의 옷 (여유 있게)</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" id="item-underwear" class="pack-checkbox">
+              <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+              <span class="checklist-text" data-i18n="checklist.itemUnderwear">속옷 및 여벌 양말</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" id="item-pajamas" class="pack-checkbox">
+              <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+              <span class="checklist-text" data-i18n="checklist.itemPajamas">잠옷</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" id="item-toiletries" class="pack-checkbox">
+              <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+              <span class="checklist-text" data-i18n="checklist.itemToiletries">세면도구 (수건, 칫솔, 치약, 비누 등)</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" id="item-tumbler" class="pack-checkbox">
+              <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+              <span class="checklist-text" data-i18n="checklist.itemTumbler">텀블러 (개인 물통)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 선택 준비물 그룹 -->
+        <div class="checklist-group">
+          <div class="checklist-group-title">
+            <span data-i18n="checklist.optionalTitle">👒 선택 준비물 (필요하면 챙겨요!)</span>
+          </div>
+          <div class="checklist-list">
+
+            <label class="checklist-item">
+              <input type="checkbox" id="item-slippers" class="pack-checkbox">
+              <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+              <span class="checklist-text" data-i18n="checklist.itemSlippers">슬리퍼</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" id="item-hat" class="pack-checkbox">
+              <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+              <span class="checklist-text" data-i18n="checklist.itemHat">모자</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" id="item-sunblock" class="pack-checkbox">
+              <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+              <span class="checklist-text" data-i18n="checklist.itemSunblock">선크림</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" id="item-umbrella" class="pack-checkbox">
+              <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+              <span class="checklist-text" data-i18n="checklist.itemUmbrella">우산 또는 우의</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" id="item-hairdryer" class="pack-checkbox">
+              <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+              <span class="checklist-text" data-i18n="checklist.itemHairdryer">휴대용 드라이기</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" id="item-medicine" class="pack-checkbox">
+              <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+              <span class="checklist-text" data-i18n="checklist.itemMedicine">개인 비상약 (평소 먹는 약)</span>
+            </label>
+
+            <label class="checklist-item">
+              <input type="checkbox" id="item-mask" class="pack-checkbox">
+              <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+              <span class="checklist-text" data-i18n="checklist.itemMask">여분 마스크</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 안전 및 예방 안내 탭 -->
+    <section id="safety-section" class="tab-content">
+      <div class="section-header">
+        <h3>
+          <i class="fa-solid fa-shield-heart"></i>
+          <span data-i18n="safety.title">안전 및 예방 안내</span>
+        </h3>
+        <p data-i18n="safety.subtitle">모두가 행복한 캠프를 위해 꼭 지켜야 할 약속!</p>
+      </div>
+
+      <div class="safety-rules-grid">
+        
+        <!-- 일이삼 준수 수칙 -->
+        <div class="safety-card emergency">
+          <h4 data-i18n="safety.ruleTitle">🚨 비상 상황 시 '일이삼 준수' 수칙</h4>
+          <ul class="safety-list">
+            <li data-i18n="safety.rule1">일(1) : 119 구조대 및 인솔 선생님께 즉시 위험을 알려요!</li>
+            <li data-i18n="safety.rule2">이(2) : 다친 친구가 있다면 안전한 곳으로 즉시 구조 작업을 도와요!</li>
+            <li data-i18n="safety.rule3">삼(3) : 학교 및 학부모님께 상황을 신속히 보고해요!</li>
+          </ul>
+        </div>
+
+        <!-- 성희롱 및 성폭력 예방 -->
+        <div class="safety-card prevention">
+          <h4 data-i18n="safety.sexTitle">🌸 소중한 우리 몸을 지켜요 (성범죄 예방)</h4>
+          <ul class="safety-list">
+            <li data-i18n="safety.sexDetail1">선생님의 허락 없이는 숙소 밖을 이탈하거나 개인행동을 절대 하지 않습니다.</li>
+            <li data-i18n="safety.sexDetail2">서로 존중하는 고운 말을 사용하고, 신체에 대한 별명이나 싫어하는 장난(예: 똥침 등)을 하지 않아요.</li>
+            <li data-i18n="safety.sexDetail3">누군가 몸을 만지거나 불편한 느낌이 들면 소리쳐서 주위에 도움을 청하고 바로 선생님께 말해요.</li>
+            <li data-i18n="safety.sexDetail4">공중화장실을 갈 때는 3~4명씩 짝을 지어 담임 선생님의 허락을 받고 함께 움직여요.</li>
+            <li data-i18n="safety.sexDetail5">밤에는 지정된 방 외에 다른 방이나 어른들의 방을 함부로 방문하지 않습니다.</li>
+          </ul>
+        </div>
+
+        <!-- 버스 탑승 및 일반 생활안전 -->
+        <div class="safety-card transit">
+          <h4 data-i18n="safety.lifeTitle">🚌 이동 및 생활 안전 약속</h4>
+          <ul class="safety-list">
+            <li data-i18n="safety.lifeDetail1">버스가 완전히 멈추기 전에는 절대로 안전벨트를 풀거나 일어서지 않습니다.</li>
+            <li data-i18n="safety.lifeDetail2">숙소에 도착하면 즉시 비상 대피로를 확인하고 화재 시 행동 요령을 익혀요.</li>
+            <li data-i18n="safety.lifeDetail3">체험활동을 시작하기 전에는 몸이 다치지 않도록 충분히 준비운동을 합니다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 비상 의료기관 및 연락 배너 -->
+      <div class="hospital-grid">
+        <div class="room-title" style="margin-top: 16px; margin-bottom: 4px;">
+          <i class="fa-solid fa-house-medical"></i>
+          <span data-i18n="safety.medicalTitle">📞 긴급 연락처 및 비상 의료 기관</span>
+        </div>
+
+        <!-- 1339 -->
+        <a href="tel:1339" class="hospital-btn">
+          <div class="hospital-info">
+            <i class="fa-solid fa-headset"></i>
+            <div class="hospital-details">
+              <span class="hospital-name" data-i18n="safety.medConsult">응급의료상담 (국번없이 1339)</span>
+              <span class="hospital-phone">1339</span>
+            </div>
+          </div>
+          <div class="hospital-call-icon"><i class="fa-solid fa-phone"></i></div>
+        </a>
+
+        <!-- 평창보건의료원 -->
+        <a href="tel:0333324000" class="hospital-btn">
+          <div class="hospital-info">
+            <i class="fa-solid fa-hospital"></i>
+            <div class="hospital-details">
+              <span class="hospital-name" data-i18n="safety.medPyeongchang">평창보건의료원 : 033-332-4000 (차로 약 40분)</span>
+              <span class="hospital-phone">033-332-4000</span>
+            </div>
+          </div>
+          <div class="hospital-call-icon"><i class="fa-solid fa-phone"></i></div>
+        </a>
+
+        <!-- 원주세브란스기독병원 -->
+        <a href="tel:0337410114" class="hospital-btn">
+          <div class="hospital-info">
+            <i class="fa-solid fa-truck-medical"></i>
+            <div class="hospital-details">
+              <span class="hospital-name" data-i18n="safety.medWonju">원주세브란스기독병원 : 033-741-0114 (차로 약 55분)</span>
+              <span class="hospital-phone">033-741-0114</span>
+            </div>
+          </div>
+          <div class="hospital-call-icon"><i class="fa-solid fa-phone"></i></div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 정보 -->
+  <footer>
+    <p>© 2026 <span data-i18n="common.schoolName">금산초등학교</span> 캠프 안전지원단</p>
+    <p>National Pyeongchang Youth Center Ecology Camp</p>
+    <button class="back-to-top-btn" id="back-to-top">
+      <i class="fa-solid fa-arrow-up"></i>
+      <span data-i18n="common.backToTop">맨 위로</span>
+    </button>
+  </footer>
+
+  <!-- 하단 플로팅 퀵 탭 네비게이션 -->
+  <nav class="floating-nav">
+    <button class="floating-tab active" data-target="overview-section">
+      <i class="fa-solid fa-circle-info"></i>
+      <span data-i18n="nav.overview">캠프 개요</span>
+    </button>
+    <button class="floating-tab" data-target="schedule-section">
+      <i class="fa-solid fa-calendar-days"></i>
+      <span data-i18n="nav.schedule">일정표</span>
+    </button>
+    <button class="floating-tab" data-target="checklist-section">
+      <i class="fa-solid fa-list-check"></i>
+      <span data-i18n="nav.checklist">준비물</span>
+    </button>
+    <button class="floating-tab" data-target="safety-section">
+      <i class="fa-solid fa-shield-heart"></i>
+      <span data-i18n="nav.safety">안전 안내</span>
+    </button>
+  </nav>
+
+  <!-- 다국어 사전 파일 및 메인 로직 로드 -->
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

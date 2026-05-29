@@ -1,0 +1,16 @@
+{
+  "name": "eco-camp-guide",
+  "version": "1.0.0",
+  "description": "금산초등학교 생태환경교육 캠프 안내 웹앱",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx live-server --port=8000"
+  },
+  "keywords": [
+    "camp",
+    "eco",
+    "vanilla-js"
+  ],
+  "author": "Antigravity",
+  "license": "ISC"
+}
